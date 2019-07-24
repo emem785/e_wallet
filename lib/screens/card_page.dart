@@ -47,21 +47,81 @@ class CreditPage extends StatelessWidget {
                 ),
               ),
               creditRating(),
-              Text(
-                'Expenditure Breakdown',
-                style: TextStyle(fontSize: 20.0, color: Colors.black54),
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 16.0),
+                child: Text(
+                  'Expenditure Breakdown',
+                  style: TextStyle(fontSize: 20.0, color: Colors.black54),
+                ),
               ),
               Row(children: <Widget>[
-                Container(
-                  height: 100.0,
-                  width: 180.0,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(25.0),
-                      boxShadow: [
-                        BoxShadow(blurRadius: 0.1, offset: Offset(0.1,0.05), color: Colors.black12),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                  child: Container(
+                    height: 80.0,
+                    width: 160.0,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(25.0),
+                        boxShadow: [
+                          BoxShadow(
+                              blurRadius: 0.1,
+                              offset: Offset(0.1, 0.05),
+                              color: Colors.black12),
+                        ],
+                        color: Colors.white),
+                    child: Row(
+                      children: <Widget>[
+                        CircularPercentIndicator(
+                          radius: 60.0,
+                          percent: 0.4,
+                          progressColor: Colors.purpleAccent,
+                          backgroundColor: Colors.white,
+                          circularStrokeCap: CircularStrokeCap.round,
+                          center:  Text('40%',
+                  style: TextStyle(fontSize: 15.0, color: Colors.lightBlue)),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(left:8.0),
+                          child: Text('Shopping',
+                  style: TextStyle(fontSize: 15.0, color: Colors.lightBlue)),
+                        ),
                       ],
-                      color: Colors.white),
-
+                    ),
+                  ),
+                ),
+                 Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                  child: Container(
+                    height: 80.0,
+                    width: 160.0,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(25.0),
+                        boxShadow: [
+                          BoxShadow(
+                              blurRadius: 0.1,
+                              offset: Offset(0.1, 0.05),
+                              color: Colors.black12),
+                        ],
+                        color: Colors.white),
+                    child: Row(
+                      children: <Widget>[
+                        CircularPercentIndicator(
+                          radius: 60.0,
+                          percent: 0.1,
+                          progressColor: Colors.redAccent,
+                          backgroundColor: Colors.white,
+                          circularStrokeCap: CircularStrokeCap.round,
+                          center:  Text('10%',
+                  style: TextStyle(fontSize: 15.0, color: Colors.lightBlue)),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(left:8.0),
+                          child: Text('Transport',
+                  style: TextStyle(fontSize: 15.0, color: Colors.lightBlue)),
+                        ),
+                      ],
+                    ),
+                  ),
                 )
               ])
             ],
@@ -100,7 +160,6 @@ class CreditPage extends StatelessWidget {
   Container cardPanel() {
     return Container(
       height: 150.0,
-      
       margin: EdgeInsets.symmetric(vertical: 32.0),
       child: Row(
         children: <Widget>[
@@ -124,7 +183,10 @@ class CreditPage extends StatelessWidget {
       ),
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20.0),
-          boxShadow: [(BoxShadow(blurRadius: 5, offset: Offset(0.3,0.1), color: Colors.black26))],
+          boxShadow: [
+            (BoxShadow(
+                blurRadius: 5, offset: Offset(0.3, 0.1), color: Colors.black26))
+          ],
           color: Colors.lightBlueAccent),
     );
   }
